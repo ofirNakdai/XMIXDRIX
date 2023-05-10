@@ -8,9 +8,7 @@ namespace Logics
     public enum eGameState
     {
         Running,
-        Winner,
-        //XWins, // ??
-        //OWins,
-        Tie,
+        DecidedWinner,
+        DecidedTie,
     }
 }

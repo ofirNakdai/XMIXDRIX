@@ -10,7 +10,6 @@ namespace Main
     {
         public static void Main()
         {
-            //TODO
             UserInterface gameInterface = new UserInterface();
             gameInterface.Start();
         }

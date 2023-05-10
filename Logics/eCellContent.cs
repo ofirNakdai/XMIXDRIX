@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Logics
 {
-    public enum eCellContent
+    public enum eGameComponent
     {
         X,
         O,

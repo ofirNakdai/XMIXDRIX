@@ -16,3 +16,5 @@ C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 31659059
 C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\UI\bin\Debug\Logics.dll
 C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\UI\bin\Debug\Logics.pdb
 C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\UI\obj\Debug\UI.csproj.CopyComplete
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\UI\bin\Debug\Logics.dll
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\UI\bin\Debug\Logics.pdb

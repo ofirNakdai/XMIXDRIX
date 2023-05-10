@@ -10,9 +10,8 @@ namespace UI
     public class UserInterface
     {
 
-        GameManagement m_game = new GameManagement();
+        GameManagement m_Game = new GameManagement();
 
-        
         public void Start()
         {
             initGame();
@@ -28,8 +27,8 @@ namespace UI
             int gameSize = getIntegerInRangeFromUser(k_BoardMenuSizeEndRange, k_BoardMenuSizeStartRange);
             printGameStyleManu();
             ePlayerType gameStyle = (ePlayerType)getIntegerInRangeFromUser(k_GameStyleMenuSizeEndRange);
-            m_game.SetBoardBySize(gameSize);
-            m_game.setOpponentType(gameStyle);
+            m_Game.SetBoardBySize(gameSize);
+            m_Game.InitPlayers(gameStyle);
         }
 
         private void printBoardSizeMenu()
@@ -72,22 +71,21 @@ namespace UI
 
             do
             {
-                m_game.GetBoard().Empty();
-                m_game.CurrentState = eGameState.Running; //Probably better not directly change. alse, player automaticly becoms computer first, maybe better to create a new round method inside GameMgmt!!!!!!!!!!
-                while (m_game.CurrentState == eGameState.Running && !quitInput)
+                m_Game.SetupNewRound();
+                while (m_Game.CurrentState == eGameState.Running && !quitInput)
                 {
-                    printBoard(m_game.GetBoard());
+                    printBoard(m_Game.GetBoard());
                     quitInput = getMove(out int row, out int col);
                     if(!quitInput)
                     {
-                        while (!m_game.IsValidMove(row, col))
+                        while (!m_Game.IsValidMove(row, col))
                         {
-                            invalidCellMassage(); //TODOOOOOOOOOOOOOOOO
+                            invalidMoveMassage();
                             quitInput = getMove(out row, out col);
                         }
 
-                        m_game.MakeMove(row, col);
-                        m_game.CheckCurrentState(row, col);
+                        m_Game.MakeMove(row, col);
+                        m_Game.CheckCurrentState(row, col);
                     }
                 }
 
@@ -97,8 +95,8 @@ namespace UI
                     quitInput = askForAnotherRound();
                 }               
             }
-            while (!quitInput);
 
+            while (!quitInput);
         }
 
         private bool getRowFromUser(out int o_Row)
@@ -139,13 +137,13 @@ namespace UI
             return wantToQuit;
         }
 
-        private bool getMove(out int o_Row, out int o_Col) // return true if want to quit
+        private bool getMove(out int o_Row, out int o_Col) // return true if user want to quit
         { 
             bool wantToQuit = false;
 
-            if (m_game.GetCurrentPlayerType() == ePlayerType.Computer)
+            if (m_Game.GetCurrentPlayerType() == ePlayerType.Computer)
             {
-                m_game.GetComputerMove(out o_Row, out o_Col);
+                m_Game.GetComputerMove(out o_Row, out o_Col);
             }
             else
             {
@@ -165,15 +163,15 @@ namespace UI
             return wantToQuit;
         }
 
-        public ePlayerChar GetCellContentChar(eCellContent i_content)
+        public char GetGameComponentAsChar(eGameComponent i_content)
         {
             ePlayerChar returnValue;
 
-            if (i_content == eCellContent.O)
+            if (i_content == eGameComponent.O)
             {
                 returnValue = ePlayerChar.O;
             }
-            else if (i_content == eCellContent.X)
+            else if (i_content == eGameComponent.X)
             {
                 returnValue = ePlayerChar.X;
             }
@@ -182,34 +180,39 @@ namespace UI
                 returnValue = ePlayerChar.Empty;
             }
 
-            return returnValue;
+            return (char)returnValue;
         }
 
         private void showStateAndScore()
         {
-            printBoard(m_game.GetBoard());
-            if (m_game.CurrentState == eGameState.Winner)
+            printBoard(m_Game.GetBoard());
+            if (m_Game.CurrentState == eGameState.DecidedWinner)
             {
-                Console.WriteLine($"{(char)GetCellContentChar(m_game.CurrentPlayerSign)} Won!!!");
+                Console.WriteLine($"{GetGameComponentAsChar(m_Game.GetCurrentPlayerSign())} Won!!!");
             }
             else
             {
                 Console.WriteLine("Its a Tie :|");
             }
-            showScore();
+            printScore();
         }
 
-        private void showScore()
+        private void printScore()
         {
             Console.WriteLine($@"
 Scores:
 =======================
-BULSHIT!");
+"
+);
+            foreach(Player player in m_Game.Players)
+            {
+                Console.WriteLine($"Player {GetGameComponentAsChar(player.m_PlayerSign)} : {player.Score}");
+            }
         }
 
-        private void invalidCellMassage()
+        private void invalidMoveMassage()
         {
-            Console.WriteLine("Invalid Cell numbers");
+            Console.WriteLine("Invalid Move!, try again");
         }
 
         private void printBoard(GameBoard i_Board)
@@ -233,7 +236,7 @@ BULSHIT!");
                     }
                     else if (i > 0 && j > 0)
                     {
-                        Console.Write($" {(char)GetCellContentChar(i_Board.GetCellValue(i, j))} |");
+                        Console.Write($" {GetGameComponentAsChar(i_Board.GetCellValue(i, j))} |");
                     }
                     
                 }

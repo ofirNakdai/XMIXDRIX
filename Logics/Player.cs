@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Logics
 {
-    class Player
+    public class Player
     {
         private ePlayerType m_PlayerType;
-        //private ePlayerChar m_PlayerChar;
+        public eGameComponent m_PlayerSign { get; }
         private int m_Score = 0;
         public int Score
         {
@@ -30,19 +30,12 @@ namespace Logics
             {
                 return m_PlayerType;
             }
-            set
-            {
-                if(value.GetType() == m_PlayerType.GetType()) /// VALIDATE!
-                {
-                    m_PlayerType = value;
-                }
-            }
         }
        
-
-        public Player(ePlayerType i_playerType)
+        public Player(ePlayerType i_playerType, eGameComponent i_PlayerSign)
         {
             m_PlayerType = i_playerType;
+            m_PlayerSign = i_PlayerSign;
         }
     }
 }
