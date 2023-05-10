@@ -1,0 +1,24 @@
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\Main.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\Main.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\Main.exe
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\Main.pdb
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\Logics.dll
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\UI.dll
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\Logics.pdb
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\UI.pdb
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\Main.csproj.CopyComplete
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\Main.exe
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\Main.pdb
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\Ex02.ConsoleUtils.dll
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\Main.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\Main.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\Main.exe
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\Main.pdb
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\Main.exe
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\Main.pdb
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\UI.dll
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\Logics.dll
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\Ex02.ConsoleUtils.dll
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\UI.pdb
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\bin\Debug\Logics.pdb
+C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\Main.csproj.CopyComplete

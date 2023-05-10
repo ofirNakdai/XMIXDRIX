@@ -1,0 +1,2 @@
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\StartPoint.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\Main\obj\Debug\StartPoint.csproj.CoreCompileInputs.cache
