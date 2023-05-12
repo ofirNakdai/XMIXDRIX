@@ -19,6 +19,7 @@ namespace Logics
                 return m_Players;
             }
         }
+
         public eGameState CurrentState
         {
             get
@@ -27,19 +28,22 @@ namespace Logics
             }
         }
 
+        public GameBoard Board
+        {
+            get
+            {
+                return m_Board;
+            }
+        }
+
         public eGameComponent GetCurrentPlayerSign()
         {
-            return m_CurrentPlayer.m_PlayerSign;
+            return m_CurrentPlayer.PlayerSign;
         }
 
         public void SetBoardBySize(int i_size)
         {
             m_Board = new GameBoard(i_size);
-        }
-
-        public GameBoard GetBoard()
-        {
-            return m_Board;
         }
         
         public void InitPlayers(ePlayerType i_gameStyle)
@@ -55,7 +59,7 @@ namespace Logics
 
         public void MakeMove(int i_Row, int i_Col)
         {
-            m_Board.SetCellValue(i_Row, i_Col, m_CurrentPlayer.m_PlayerSign);
+            m_Board.SetCellValue(i_Row, i_Col, m_CurrentPlayer.PlayerSign);
             alterCurrentPlayer();
         }
 
@@ -93,6 +97,7 @@ namespace Logics
         {
             m_Board.GenerateEmptyCell(out o_Row, out o_Col);
         }
+
         public void SetupNewRound()
         {
             m_Board.Empty();

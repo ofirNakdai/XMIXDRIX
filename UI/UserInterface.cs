@@ -9,8 +9,10 @@ namespace UI
 {
     public class UserInterface
     {
-
-        GameManagement m_Game = new GameManagement();
+        private GameManagement m_Game = new GameManagement();
+        private const int k_BoardMenuSizeStartRange = 3;
+        private const int k_BoardMenuSizeEndRange = 9;
+        private const int k_GameStyleMenuSizeEndRange = 2;
 
         public void Start()
         {
@@ -20,9 +22,6 @@ namespace UI
 
         private void initGame()
         {
-            const int k_BoardMenuSizeStartRange = 3;
-            const int k_BoardMenuSizeEndRange = 9;
-            const int k_GameStyleMenuSizeEndRange = 2;
             printBoardSizeMenu();
             int gameSize = getIntegerInRangeFromUser(k_BoardMenuSizeEndRange, k_BoardMenuSizeStartRange);
             printGameStyleManu();
@@ -74,7 +73,7 @@ namespace UI
                 m_Game.SetupNewRound();
                 while (m_Game.CurrentState == eGameState.Running && !quitInput)
                 {
-                    printBoard(m_Game.GetBoard());
+                    printBoard(m_Game.Board);
                     quitInput = getMove(out int row, out int col);
                     if(!quitInput)
                     {
@@ -92,8 +91,9 @@ namespace UI
                 if (!quitInput)
                 {
                     showStateAndScore();
-                    quitInput = askForAnotherRound();
-                }               
+                }
+
+                quitInput = askForAnotherRound();
             }
 
             while (!quitInput);
@@ -103,8 +103,8 @@ namespace UI
         {
             string userInput = null;
             bool wantToQuit = false;
+            
             o_Row = -1;
-
             do
             {
                 Console.WriteLine("Please choose the row number:");
@@ -122,8 +122,8 @@ namespace UI
         {
             string userInput = null;
             bool wantToQuit = false;
-            o_Col = -1;
 
+            o_Col = -1;
             do
             {
                 Console.WriteLine("Please choose the column number:");
@@ -148,7 +148,6 @@ namespace UI
             else
             {
                 wantToQuit = getRowFromUser(out o_Row);
-
                 if (!wantToQuit)
                 {
                     wantToQuit = getColFromUser(out o_Col);
@@ -163,15 +162,15 @@ namespace UI
             return wantToQuit;
         }
 
-        public char GetGameComponentAsChar(eGameComponent i_content)
+        private char getGameComponentAsChar(eGameComponent i_Content)
         {
             ePlayerChar returnValue;
 
-            if (i_content == eGameComponent.O)
+            if (i_Content == eGameComponent.O)
             {
                 returnValue = ePlayerChar.O;
             }
-            else if (i_content == eGameComponent.X)
+            else if (i_Content == eGameComponent.X)
             {
                 returnValue = ePlayerChar.X;
             }
@@ -185,15 +184,16 @@ namespace UI
 
         private void showStateAndScore()
         {
-            printBoard(m_Game.GetBoard());
+            printBoard(m_Game.Board);
             if (m_Game.CurrentState == eGameState.DecidedWinner)
             {
-                Console.WriteLine($"{GetGameComponentAsChar(m_Game.GetCurrentPlayerSign())} Won!!!");
+                Console.WriteLine($"{getGameComponentAsChar(m_Game.GetCurrentPlayerSign())} Won!!!");
             }
             else
             {
                 Console.WriteLine("Its a Tie :|");
             }
+
             printScore();
         }
 
@@ -201,12 +201,11 @@ namespace UI
         {
             Console.WriteLine($@"
 Scores:
-=======================
-"
+======================="
 );
             foreach(Player player in m_Game.Players)
             {
-                Console.WriteLine($"Player {GetGameComponentAsChar(player.m_PlayerSign)} : {player.Score}");
+                Console.WriteLine($"Player {getGameComponentAsChar(player.PlayerSign)} : {player.Score}");
             }
         }
 
@@ -236,11 +235,11 @@ Scores:
                     }
                     else if (i > 0 && j > 0)
                     {
-                        Console.Write($" {GetGameComponentAsChar(i_Board.GetCellValue(i, j))} |");
-                    }
-                    
+                        Console.Write($" {getGameComponentAsChar(i_Board.GetCellValue(i, j))} |");
+                    }  
                 }
-                    Console.WriteLine();
+
+                Console.WriteLine();
                 if (i > 0)
                 {
                     Console.WriteLine(" " + new string('=', 4 * i_Board.Size + 1));
@@ -263,6 +262,5 @@ Scores:
 
             return wantToQuit;
         }
-
     }
 }
