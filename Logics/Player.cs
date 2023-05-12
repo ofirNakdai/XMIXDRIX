@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Logics
+﻿namespace Logics
 {
     public class Player
     {
@@ -25,9 +20,9 @@ namespace Logics
             }
         }
 
-        public Player(ePlayerType i_playerType, eGameComponent i_PlayerSign)
+        public Player(ePlayerType i_PlayerType, eGameComponent i_PlayerSign)
         {
-            PlayerType = i_playerType;
+            PlayerType = i_PlayerType;
             PlayerSign = i_PlayerSign;
         }
     }

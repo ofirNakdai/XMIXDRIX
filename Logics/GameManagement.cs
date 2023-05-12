@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Logics
+﻿namespace Logics
 {
     public class GameManagement
     {
@@ -41,15 +36,15 @@ namespace Logics
             return m_CurrentPlayer.PlayerSign;
         }
 
-        public void SetBoardBySize(int i_size)
+        public void SetBoardBySize(int i_Size)
         {
-            m_Board = new GameBoard(i_size);
+            m_Board = new GameBoard(i_Size);
         }
         
-        public void InitPlayers(ePlayerType i_gameStyle)
+        public void InitPlayers(ePlayerType i_GameStyle)
         {
             m_Players[0] = new Player(ePlayerType.Human, eGameComponent.X);
-            m_Players[1] = new Player(i_gameStyle, eGameComponent.O);
+            m_Players[1] = new Player(i_GameStyle, eGameComponent.O);
         }
 
         public bool IsValidMove(int i_Row, int i_Col)
