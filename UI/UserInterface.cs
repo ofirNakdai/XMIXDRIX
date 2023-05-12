@@ -247,6 +247,7 @@ Scores:
         private bool askForAnotherRound()
         {
             bool wantToQuit = false;
+
             Console.WriteLine(
 @"Play another round?:
 1. Yes

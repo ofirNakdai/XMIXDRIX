@@ -12,7 +12,7 @@ namespace Logics
         {
             r_BoardSize = i_Size;
             m_Board = new eGameComponent[r_BoardSize, r_BoardSize];
-            Empty();
+            this.Empty();
         }
 
         public int Size
@@ -49,18 +49,18 @@ namespace Logics
             return (i_Row >= 1 && i_Row <= r_BoardSize && i_Col >= 1 && i_Col <= r_BoardSize);
         }
 
-        public bool IsThereSequance(int i_Row, int j_Col)
+        public bool IsThereSequance(int i_Row, int i_Col)
         {
-            return IsThereRowSequence(i_Row-1, j_Col-1) || isThereColSequence(i_Row-1, j_Col-1) || isThereDiagonalSequence(i_Row - 1, j_Col - 1);
+            return isThereRowSequence(i_Row-1, i_Col-1) || isThereColSequence(i_Row-1, i_Col-1) || isThereDiagonalSequence(i_Row - 1, i_Col - 1);
         }
 
-        private bool IsThereRowSequence(int i_Row, int j_Col)
+        private bool isThereRowSequence(int i_Row, int i_Col)
         {
             bool areAllSame = true;
 
             for (int j = 0; j < r_BoardSize; j++)
             {
-                if (m_Board[i_Row, j] != m_Board[i_Row, j_Col])
+                if (m_Board[i_Row, j] != m_Board[i_Row, i_Col])
                 {
                     areAllSame = false;
                     break;
@@ -70,13 +70,13 @@ namespace Logics
             return areAllSame;
         }
 
-        private bool isThereColSequence(int i_Row, int j_Col)
+        private bool isThereColSequence(int i_Row, int i_Col)
         {
             bool areAllSame = true;
 
             for (int i = 0; i < r_BoardSize; i++)
             {
-                if (m_Board[i, j_Col] != m_Board[i_Row, j_Col])
+                if (m_Board[i, i_Col] != m_Board[i_Row, i_Col])
                 {
                     areAllSame = false;
                     break;
@@ -86,14 +86,14 @@ namespace Logics
             return areAllSame;
         }
 
-        private bool isThereDiagonalSequence(int i_Row, int j_Col)
+        private bool isThereDiagonalSequence(int i_Row, int i_Col)
         {
             bool areAllSame1 = true;
             bool areAllSame2 = true;
 
             for (int i = 0; i < r_BoardSize; i++)
             {
-                if (m_Board[i, i] != m_Board[i_Row, j_Col])
+                if (m_Board[i, i] != m_Board[i_Row, i_Col])
                 {
                     areAllSame1 = false;
                     break;
@@ -102,7 +102,7 @@ namespace Logics
 
             for (int i = 0; i < r_BoardSize && !areAllSame1; i++)
             {
-                if (m_Board[i, r_BoardSize - 1 - i] != m_Board[i_Row, j_Col])
+                if (m_Board[i, r_BoardSize - 1 - i] != m_Board[i_Row, i_Col])
                 {
                     areAllSame2 = false;
                     break;
@@ -115,7 +115,7 @@ namespace Logics
         public void GenerateEmptyCell(out int o_Row, out int o_Col)
         {
             Random random = new Random();
-            List<int> EmptyCells = new List<int>(r_BoardSize * r_BoardSize);
+            List<int> emptyCells = new List<int>(r_BoardSize * r_BoardSize);
 
             for (int i = 0; i < r_BoardSize; i++)
             {
@@ -123,14 +123,14 @@ namespace Logics
                 {
                     if (m_Board[i, j] == eGameComponent.Empty)
                     {
-                        EmptyCells.Add(i * r_BoardSize + j);
+                        emptyCells.Add(i * r_BoardSize + j);
                     }
                 }
             }
 
-            int GenerateIndex = random.Next(EmptyCells.Count);
-            o_Col = EmptyCells[GenerateIndex] % r_BoardSize;
-            o_Row = (EmptyCells[GenerateIndex] - o_Col) / r_BoardSize;
+            int generateIndex = random.Next(emptyCells.Count);
+            o_Col = emptyCells[generateIndex] % r_BoardSize;
+            o_Row = (emptyCells[generateIndex] - o_Col) / r_BoardSize;
             o_Col += 1;
             o_Row += 1;
         }
