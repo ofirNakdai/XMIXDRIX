@@ -16,8 +16,6 @@ C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 31659059
 C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\UI\bin\Debug\Logics.dll
 C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\UI\bin\Debug\Logics.pdb
 C:\Users\user\Desktop\ניסיון שינוי מטלת C#\B23 Ex02 Yair 316590595 Ofir 318382827\UI\obj\Debug\UI.csproj.CopyComplete
-C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\UI\bin\Debug\Logics.dll
-C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\UI\bin\Debug\Logics.pdb
 C:\Users\Ofir Nakdai\Documents\לימודים\שנה ג\סמסטר ב\C#\מטלות\DN_MTA_2023B_Ex02\UI\bin\Debug\UI.dll
 C:\Users\Ofir Nakdai\Documents\לימודים\שנה ג\סמסטר ב\C#\מטלות\DN_MTA_2023B_Ex02\UI\bin\Debug\UI.pdb
 C:\Users\Ofir Nakdai\Documents\לימודים\שנה ג\סמסטר ב\C#\מטלות\DN_MTA_2023B_Ex02\UI\bin\Debug\Ex02.ConsoleUtils.dll
@@ -28,3 +26,5 @@ C:\Users\Ofir Nakdai\Documents\לימודים\שנה ג\סמסטר ב\C#\מטל�
 C:\Users\Ofir Nakdai\Documents\לימודים\שנה ג\סמסטר ב\C#\מטלות\DN_MTA_2023B_Ex02\UI\obj\Debug\UI.csproj.CopyComplete
 C:\Users\Ofir Nakdai\Documents\לימודים\שנה ג\סמסטר ב\C#\מטלות\DN_MTA_2023B_Ex02\UI\obj\Debug\UI.dll
 C:\Users\Ofir Nakdai\Documents\לימודים\שנה ג\סמסטר ב\C#\מטלות\DN_MTA_2023B_Ex02\UI\obj\Debug\UI.pdb
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\UI\bin\Debug\Logic.dll
+C:\Users\user\source\repos\B23 Ex02 Yair 316590595 Ofir 318382827\UI\bin\Debug\Logic.pdb

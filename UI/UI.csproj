@@ -39,11 +39,12 @@
     <Compile Include="UserInterface.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Ex02.ConsoleUtils">
-      <HintPath>.\Ex02.ConsoleUtils.dll</HintPath>
+    <Reference Include="Ex02.ConsoleUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Temp\Ex02.ConsoleUtils.dll</HintPath>
     </Reference>
-    <Reference Include="Logics">
-      <HintPath>..\Logics\bin\Debug\Logics.dll</HintPath>
+    <Reference Include="Logic">
+      <HintPath>..\Logic\bin\Debug\Logic.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FD00667D-D7D3-4D00-8E63-B31F98B4FCD5}</ProjectGuid>
+    <ProjectGuid>{00FAD11A-40DB-4DCF-8AB4-4E08D12D8193}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Logics</RootNamespace>
-    <AssemblyName>Logics</AssemblyName>
+    <RootNamespace>Logic</RootNamespace>
+    <AssemblyName>Logic</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -35,12 +35,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="eCellContent.cs" />
+    <Compile Include="eGameComponent.cs" />
     <Compile Include="eGameState.cs" />
+    <Compile Include="ePlayerType.cs" />
     <Compile Include="GameBoard.cs" />
     <Compile Include="GameManagement.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="ePlayerType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
 ﻿using System;
 using Ex02.ConsoleUtils;
-using Logics;
+using Logic;
 
 namespace UI
 {
@@ -98,38 +98,32 @@ namespace UI
 
         private bool getRowFromUser(out int o_Row)
         {
-            string userInput = null;
-            bool wantToQuit = false;
-            
             o_Row = -1;
-            do
+            Console.WriteLine("Please choose the row number:");
+            string userInput = Console.ReadLine();
+            bool wantToQuit = (userInput == "Q");
+            while (!wantToQuit && !int.TryParse(userInput, out o_Row))
             {
-                Console.WriteLine("Please choose the row number:");
+                Console.WriteLine("Invalid input! Please choose the row number:");
                 userInput = Console.ReadLine();
-                if (userInput == "Q")
-                {
-                    wantToQuit = true;
-                }
-            } while (!wantToQuit && !int.TryParse(userInput, out o_Row));
+                wantToQuit = (userInput == "Q");
+            }
 
             return wantToQuit;
         }
 
         private bool getColFromUser(out int o_Col)
         {
-            string userInput = null;
-            bool wantToQuit = false;
-
             o_Col = -1;
-            do
+            Console.WriteLine("Please choose the column number:");
+            string userInput = Console.ReadLine();
+            bool wantToQuit = (userInput == "Q");
+            while (!wantToQuit && !int.TryParse(userInput, out o_Col))
             {
-                Console.WriteLine("Please choose the column number:");
+                Console.WriteLine("Invalid input! Please choose the column number:");
                 userInput = Console.ReadLine();
-                if (userInput == "Q")
-                {
-                    wantToQuit = true;
-                }
-            } while (!wantToQuit && !int.TryParse(userInput, out o_Col));
+                wantToQuit = (userInput == "Q");
+            }
 
             return wantToQuit;
         }

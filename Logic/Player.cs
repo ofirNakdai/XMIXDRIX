@@ -1,4 +1,4 @@
-﻿namespace Logics
+﻿namespace Logic
 {
     public class Player
     {

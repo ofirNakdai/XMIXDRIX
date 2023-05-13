@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Logics
+namespace Logic
 {
     public class GameBoard
     {
